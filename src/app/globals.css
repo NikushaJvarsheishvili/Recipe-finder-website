@@ -1,26 +1,47 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@layer base {
+  @font-face {
+    font-family: "nunito-semibold";
+    src: url("/fonts/Nunito/static/Nunito-SemiBold.ttf") format("truetype");
+  }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    height: 2000px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.flex-row-center {
+  @apply flex flex-row;
+}
+.text-preset-1 {
+  @apply text-1 leading-110 -tracking--2 font-bold;
+}
+.text-preset-5 {
+  @apply text-5 leading-140 -tracking--0.5;
+}
+
+.text-preset-7 {
+  @apply text-7 leading-150 -tracking--0.3 font-nunito-semibold;
+}
+.button {
+  @apply border-none px-36 py-16 bg-neutral-900 text-white font-bold rounded-radius-10;
+}
+
+@layer components {
+  .nav-item-active {
+    @apply relative;
+  }
+  .nav-item-active::before {
+    content: "";
+    @apply absolute w-full border-orange-500 border-b-2 bottom-0 rounded-full;
+  }
 }
