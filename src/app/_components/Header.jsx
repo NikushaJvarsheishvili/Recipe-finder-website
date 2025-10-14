@@ -14,7 +14,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="flex justify-between px-60 py-20 bg-neutral-100 text-black border-b-2 fixed w-100% items-center z-10 top-0">
+    <header className="flex justify-between px-60 py-20 bg-neutral-100 text-black border-b-2 fixed w-full items-center z-[100] top-0">
       <Link href={"/"}>
         <Image src={logo} width={260} height={40} alt="logo" />
       </Link>

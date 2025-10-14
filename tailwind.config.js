@@ -1,5 +1,3 @@
-const { Nunito } = require("next/font/google");
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
@@ -32,29 +30,45 @@ module.exports = {
         60: "60px",
         20: "20px",
         40: "40px",
-        "100%": "100%",
         102: "102px",
         36: "36px",
         16: "16px",
         10: "10px",
+        580: "580px",
+        80: "80px",
+        250: "250px",
       },
       fontSize: {
-        1: "71px",
-        7: "18px",
-        5: "20px",
+        71: "71px",
+        18: "18px",
+        16: "16px",
+        64: "64px",
+        48: "48px",
+        32: "32px",
+        20: "20px",
       },
       lineHeight: {
         110: "110%",
         150: "150%",
         140: "140%",
+        120: "120%",
+        130: "130%",
       },
       letterSpacing: {
+        "-1": "-1px",
         "-2": "-2px",
         "-0.3": "-0.3px",
         "-0.5": "-0.5px",
+        "-0.4": "-0.4px",
       },
       fontFamily: {
         "nunito-semibold": ['"nunito-semibold", "sans-serif"'],
+        "nunito-extrabold": ['"nunito-extrabold", "sans-serif"'],
+        "nunito-nunitosans": ['"nunito-nunitosans", "sans-serif"'],
+        "nunito-bold": ['"nunito-bold", "sans-serif"'],
+      },
+      zIndex: {
+        "-1": "-1",
       },
     },
   },

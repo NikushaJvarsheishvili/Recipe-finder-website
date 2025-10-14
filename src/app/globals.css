@@ -7,6 +7,19 @@
     font-family: "nunito-semibold";
     src: url("/fonts/Nunito/static/Nunito-SemiBold.ttf") format("truetype");
   }
+  @font-face {
+    font-family: "nunito-extrabold";
+    src: url("/fonts/Nunito/static/Nunito-ExtraBold.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "nunito-nunitosans";
+    src: url("/fonts/Nunito_Sans/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf")
+      format("truetype");
+  }
+  @font-face {
+    font-family: "nunito-bold";
+    src: url("/fonts/Nunito/static/Nunito-Bold.ttf") format("truetype");
+  }
 
   * {
     margin: 0;
@@ -14,26 +27,44 @@
     box-sizing: border-box;
   }
 
-  body {
-    height: 2000px;
-  }
+  /* body {
+    height: 20000px;
+  } */
 }
 
 .flex-row-center {
   @apply flex flex-row;
 }
+.flex-col-center {
+  @apply flex flex-col;
+}
+
 .text-preset-1 {
-  @apply text-1 leading-110 -tracking--2 font-bold;
+  @apply text-71 leading-110 -tracking--2 font-nunito-extrabold;
+}
+
+.text-preset-2 {
+  @apply text-48 leading-120 -tracking--2 font-nunito-extrabold;
+}
+.text-preset-3 {
+  @apply text-32 leading-130 -tracking--1 font-nunito-bold;
 }
 .text-preset-5 {
-  @apply text-5 leading-140 -tracking--0.5;
+  @apply text-20 leading-140 -tracking--0.5 font-nunito-bold;
+}
+.text-preset-6 {
+  @apply text-16 leading-150 -tracking--0.4 font-nunito-nunitosans text-neutral-600 font-medium;
 }
 
 .text-preset-7 {
-  @apply text-7 leading-150 -tracking--0.3 font-nunito-semibold;
+  @apply text-18 leading-150 -tracking--0.3 font-nunito-semibold;
 }
+.text-preset-9 {
+  @apply text-[16px] leading-150 -tracking--0.3 font-nunito-nunitosans;
+}
+
 .button {
-  @apply border-none px-36 py-16 bg-neutral-900 text-white font-bold rounded-radius-10;
+  @apply border-none px-36 py-16 bg-neutral-900 text-white font-bold rounded-radius-10 font-nunito-bold;
 }
 
 @layer components {
