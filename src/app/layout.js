@@ -2,6 +2,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "./_components/Footer";
 import Header from "./_components/Header";
+import AnimatedWrapper from "./_components/AnimatedWrapper";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +29,12 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-neutral-100`}
       >
         <Header />
-        <div className=" mt-[200px]">{children}</div>
+
+        <main className="mt-[200px]">
+          <AnimatedWrapper>{children}</AnimatedWrapper>
+        </main>
+
+        <Script src="/smoothScroll.js" />
         <Footer />
       </body>
     </html>

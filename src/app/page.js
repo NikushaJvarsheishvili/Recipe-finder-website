@@ -1,33 +1,26 @@
-import patternSquiggle from "@/app/_assets/images/pattern-squiggle-1.svg";
 import Image from "next/image";
-import ImageHomeHeroLarge from "@/app/_assets/images/image-home-hero-large.webp";
-import carrotIcon from "@/app/_assets/images/icon-whole-food-recipes.svg";
-import minumumIcon from "@/app/_assets/images/icon-minimum-fuss.svg";
-import searchInIcon from "@/app/_assets/images/icon-search-in-seconds.svg";
-import homeRealLarge from "@/app/_assets/images/image-home-real-life-large.webp";
-import patternFork from "@/app/_assets/images/pattern-fork.svg";
-import patternKnife from "@/app/_assets/images/pattern-knife.svg";
 
 export default function Home() {
   const benefits = [
     {
-      icon: carrotIcon,
+      icon: "/images/icon-whole-food-recipes.svg",
       title: "Whole-food recipes",
       description: "Each dish uses everyday, unprocessed ingredients.",
     },
     {
-      icon: minumumIcon,
+      icon: "/images/icon-minimum-fuss.svg",
       title: "Minimum fuss",
       description:
         "All recipes are designed to make eating healthy quick and easy.",
     },
     {
-      icon: searchInIcon,
+      icon: "/images/icon-search-in-seconds.svg",
       title: "Search in seconds",
       description:
         "Filter by name or ingredient and jump straight to the recipe you need.",
     },
   ];
+  // console.log("/images/image-home-hero-large-webp");
 
   return (
     <>
@@ -36,7 +29,7 @@ export default function Home() {
           <h1 className="text-preset-1 text-neutral-900">
             <span
               className="relative border-none
-            
+
               before:absolute
               before:w-250
               before:h-11
@@ -44,7 +37,7 @@ export default function Home() {
               before:rounded-radius-4
               before:bottom-3
               before:-z-1
-            
+
             "
             >
               Healty
@@ -63,7 +56,9 @@ export default function Home() {
       <section className="relative">
         <Image
           className=""
-          src={patternSquiggle}
+          src="/images/pattern-squiggle-1.svg"
+          width={0}
+          height={0}
           alt="pattern-squiggle"
           style={{
             width: "100%",
@@ -74,9 +69,10 @@ export default function Home() {
         />{" "}
         <Image
           className=""
-          src={ImageHomeHeroLarge}
+          src="/images/image-home-hero-large.webp"
           alt="pattern-squiggle"
           width={1192}
+          height={1000}
           style={{
             border: "solid white 10px",
             margin: "auto",
@@ -89,7 +85,7 @@ export default function Home() {
         <h1 className="text-preset-2 text-neutral-900 text-center">
           What you’ll get
         </h1>
-        <div className="flex justify-center flex-row gap-[32px]">
+        <div className="flex items-center md:justify-center flex-col md:flex-row gap-[32px]">
           {benefits.map((item, index) => {
             return (
               <div
@@ -115,7 +111,7 @@ export default function Home() {
           })}
         </div>
       </section>
-      <section className=" flex flex-row  mt-[192px] justify-center gap-[48px]">
+      <section className=" flex flex-col md:flex-row items-center  mt-[192px] justify-center gap-[76px]">
         <div className="  flex flex-col justify-center gap-[20px] ">
           <h1 className="text-preset-2 text-neutral-900">
             Built for real life
@@ -145,7 +141,7 @@ export default function Home() {
         <div>
           <Image
             className="rounded-radius-16"
-            src={homeRealLarge}
+            src="/images/image-home-real-life-large.webp"
             width={635}
             height={450}
             alt="home-real-large"
@@ -155,7 +151,7 @@ export default function Home() {
       <section className=" h-[396px] mt-[96px] bg-neutral-200 max-w-[1192px] m-auto rounded-radius-16 flex items-center justify-center  relative overflow-hidden">
         <Image
           className="absolute -left-[60px] top-8"
-          src={patternFork}
+          src="/images/pattern-fork.svg"
           width={314}
           height={390}
           alt="pattern-fork"
@@ -173,7 +169,7 @@ export default function Home() {
         </div>
         <Image
           className="absolute -right-[60px]"
-          src={patternKnife}
+          src="/images/pattern-knife.svg"
           width={314}
           height={390}
           alt="pattern-knife"

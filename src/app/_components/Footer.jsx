@@ -1,8 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import instagramIcon from "@/app/_assets/images/icon-instagram.svg";
-import tiktokIcon from "@/app/_assets/images/icon-tiktok.svg";
-import blueskyIcon from "@/app/_assets/images/icon-bluesky.svg";
 
 export default function Footer() {
   return (
@@ -15,7 +12,7 @@ export default function Footer() {
         <div className="flex gap-[24px]">
           <Link href="/">
             <Image
-              src={instagramIcon}
+              src="/images/icon-instagram.svg"
               width={22}
               height={22}
               alt="instagram-icon"
@@ -23,13 +20,18 @@ export default function Footer() {
           </Link>
           <Link href="/">
             <Image
-              src={blueskyIcon}
+              src="/images/icon-tiktok.svg"
               width={22}
               height={22}
               alt="bluesky-icon"
             />
           </Link>
-          <Image src={tiktokIcon} width={22} height={22} alt="tiktok-icon" />
+          <Image
+            src="/images/icon-bluesky.svg"
+            width={22}
+            height={22}
+            alt="tiktok-icon"
+          />
           <Link href="/"></Link>
         </div>
       </div>

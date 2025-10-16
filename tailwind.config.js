@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: ["class"],
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
@@ -13,6 +14,46 @@ module.exports = {
         "orange-500": "#fe9f6b",
         "teal-500": "#49AC9B",
         "indigo-500": "#697DDB",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        chart: {
+          1: "hsl(var(--chart-1))",
+          2: "hsl(var(--chart-2))",
+          3: "hsl(var(--chart-3))",
+          4: "hsl(var(--chart-4))",
+          5: "hsl(var(--chart-5))",
+        },
       },
       borderRadius: {
         "radius-0": "0px",
@@ -25,34 +66,37 @@ module.exports = {
         "radius-20": "20px",
         "radius-24": "24px",
         "radius-full": "999px",
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
       },
       spacing: {
-        60: "60px",
-        20: "20px",
-        40: "40px",
-        102: "102px",
-        36: "36px",
-        16: "16px",
         10: "10px",
-        580: "580px",
+        16: "16px",
+        20: "20px",
+        36: "36px",
+        40: "40px",
+        60: "60px",
         80: "80px",
+        102: "102px",
         250: "250px",
+        580: "580px",
       },
       fontSize: {
-        71: "71px",
-        18: "18px",
         16: "16px",
-        64: "64px",
-        48: "48px",
-        32: "32px",
+        18: "18px",
         20: "20px",
+        32: "32px",
+        48: "48px",
+        64: "64px",
+        71: "71px",
       },
       lineHeight: {
         110: "110%",
-        150: "150%",
-        140: "140%",
         120: "120%",
         130: "130%",
+        140: "140%",
+        150: "150%",
       },
       letterSpacing: {
         "-1": "-1px",
@@ -72,5 +116,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 };
