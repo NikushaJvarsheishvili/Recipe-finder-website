@@ -15,8 +15,6 @@ export default function DropDownMenu({ DropMenuProperty }) {
   const [position, setPosition] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
 
-  console.log(DropMenuProperty);
-
   return (
     <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
       <DropdownMenuTrigger asChild>
@@ -24,7 +22,8 @@ export default function DropDownMenu({ DropMenuProperty }) {
           className="text-preset-7 px-[16px] py-[10px] "
           variant="outline"
         >
-          {position !== null ? `${position} minutes` : DropMenuProperty.title}
+          {/* {position !== null ? `${position} minutes` : DropMenuProperty.title} */}
+          {DropMenuProperty.title}
 
           <Image
             className={`${

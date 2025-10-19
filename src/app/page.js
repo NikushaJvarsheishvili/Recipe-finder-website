@@ -20,7 +20,6 @@ export default function Home() {
         "Filter by name or ingredient and jump straight to the recipe you need.",
     },
   ];
-  // console.log("/images/image-home-hero-large-webp");
 
   return (
     <>

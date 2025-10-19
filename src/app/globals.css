@@ -102,6 +102,9 @@
 .text-preset-3 {
   @apply text-32 leading-130 -tracking--1 font-nunito-bold;
 }
+.text-preset-4 {
+  @apply text-[24px] leading-130 -tracking--1 font-nunito-bold;
+}
 .text-preset-5 {
   @apply text-20 leading-140 -tracking--0.5 font-nunito-bold;
 }

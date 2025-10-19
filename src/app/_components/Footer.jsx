@@ -26,13 +26,15 @@ export default function Footer() {
               alt="bluesky-icon"
             />
           </Link>
-          <Image
-            src="/images/icon-bluesky.svg"
-            width={22}
-            height={22}
-            alt="tiktok-icon"
-          />
-          <Link href="/"></Link>
+
+          <Link href="/">
+            <Image
+              src="/images/icon-bluesky.svg"
+              width={22}
+              height={22}
+              alt="tiktok-icon"
+            />
+          </Link>
         </div>
       </div>
     </footer>

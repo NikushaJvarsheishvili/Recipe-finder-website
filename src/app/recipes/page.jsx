@@ -1,11 +1,8 @@
-import recipesData from "@/app/data.json";
 import Image from "next/image";
-import Link from "next/link";
 import DropDownMenu from "../_components/DropDownMenu";
+import Card from "../_components/Card";
 
 export default function Recipes() {
-  console.log(recipesData);
-
   const DropMenuProperty = {
     prep: {
       title: "Max Prep Time",
@@ -57,77 +54,7 @@ export default function Recipes() {
             </form>
           </div>
         </article>
-        <article
-          className="mt-[24px] max-w-[1192px] m-auto grid
-            gap-[32px]
-            sm:grid-cols-2
-            lg:grid-cols-3"
-        >
-          {recipesData.map((item, index) => {
-            console.log(item.image.small.slice(8));
-            return (
-              <div
-                key={index}
-                className="card flex flex-col justify-between p-[8px] mx-auto rounded-radius-10"
-              >
-                <div className="flex flex-col gap-[16px] pb-[16px]">
-                  <Image
-                    className="mx-auto rounded-radius-10 h-[300px] w-full object-cover"
-                    src={item.image.small.slice(8)}
-                    width={360}
-                    height={100}
-                    alt={item.title}
-                  />
-                  <div className=" flex flex-col gap-[10px] break-all">
-                    <h1 className="text-preset-5 text-neutral-900">
-                      {item.title}
-                    </h1>
-                    <p className="text-preset-9 text-neutral-900">
-                      {item.overview}
-                    </p>
-                    <div className=" grid sm:grid-cols-2 grid-cols-3 gap-x-[16px] gap-y-[8px]  text-preset-9 text-neutral-900 font-medium ">
-                      <p className="flex gap-[6px]">
-                        <Image
-                          src="/images/icon-servings.svg"
-                          width={20}
-                          height={20}
-                          alt={item.servings}
-                        />
-                        Serving: {item.servings}
-                      </p>
-                      <p className="flex gap-[6px]">
-                        <Image
-                          src="/images/icon-prep-time.svg"
-                          width={20}
-                          height={20}
-                          alt={item.prepMinutes}
-                        />
-                        Prep: {item.prepMinutes}{" "}
-                        {item.prepMinutes === 0 ? "min" : "mins"}
-                      </p>
-                      <p className="flex gap-[6px]">
-                        <Image
-                          src="/images/icon-cook-time.svg"
-                          width={20}
-                          height={20}
-                          alt={item.cookMinutes}
-                        />
-                        Cook: {item.cookMinutes}{" "}
-                        {item.cookMinutes === 0 ? "min" : "mins"}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <Link
-                  className="border bg-neutral-900 text-white rounded-radius-full h-[48px] flex justify-center items-center text-preset-9 text-bold"
-                  href={`/${item.id}`}
-                >
-                  View Recipe
-                </Link>
-              </div>
-            );
-          })}
-        </article>
+        <Card isFull={true} />
       </section>
     </>
   );
