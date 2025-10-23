@@ -12,6 +12,7 @@ export default function Footer() {
         <div className="flex gap-[24px]">
           <Link href="/">
             <Image
+              priority
               src="/images/icon-instagram.svg"
               width={22}
               height={22}
@@ -20,6 +21,7 @@ export default function Footer() {
           </Link>
           <Link href="/">
             <Image
+              priority
               src="/images/icon-tiktok.svg"
               width={22}
               height={22}
@@ -29,6 +31,7 @@ export default function Footer() {
 
           <Link href="/">
             <Image
+              priority
               src="/images/icon-bluesky.svg"
               width={22}
               height={22}

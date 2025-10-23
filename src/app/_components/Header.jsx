@@ -16,7 +16,13 @@ export default function Header() {
   return (
     <header className="flex justify-between px-[20px] lg:px-60 py-20 bg-neutral-100 text-black border-b-2 fixed w-full items-center z-[100] top-0">
       <Link href={"/"}>
-        <Image src="/images/logo.svg" width={260} height={40} alt="logo" />
+        <Image
+          priority
+          src="/images/logo.svg"
+          width={260}
+          height={40}
+          alt="logo"
+        />
       </Link>
       <nav className="flex-row-center gap-40 hidden lg:flex text-neutral-900 text-preset-7">
         {navItems.map((item, index) => (

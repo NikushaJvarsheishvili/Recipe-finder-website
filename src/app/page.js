@@ -1,4 +1,5 @@
 import Image from "next/image";
+import CookSmarterSection from "./_components/CookSmarterSection";
 
 export default function Home() {
   const benefits = [
@@ -54,7 +55,7 @@ export default function Home() {
       </section>
       <section className="relative">
         <Image
-          className=""
+          priority
           src="/images/pattern-squiggle-1.svg"
           width={0}
           height={0}
@@ -67,7 +68,7 @@ export default function Home() {
           }}
         />{" "}
         <Image
-          className=""
+          priority
           src="/images/image-home-hero-large.webp"
           alt="pattern-squiggle"
           width={1192}
@@ -92,6 +93,7 @@ export default function Home() {
                 className="mt-[48px] max-w-[376px] flex flex-col gap-[24px]"
               >
                 <Image
+                  priority
                   className="border-2 w-[60px] h-[60px] p-[8px] bg-white rounded-radius-16"
                   src={item.icon}
                   alt={item.title}
@@ -139,6 +141,7 @@ export default function Home() {
         </div>
         <div>
           <Image
+            priority
             className="rounded-radius-16"
             src="/images/image-home-real-life-large.webp"
             width={635}
@@ -147,33 +150,7 @@ export default function Home() {
           />
         </div>
       </section>
-      <section className=" h-[396px] mt-[96px] bg-neutral-200 max-w-[1192px] m-auto rounded-radius-16 flex items-center justify-center  relative overflow-hidden">
-        <Image
-          className="absolute -left-[60px] top-8"
-          src="/images/pattern-fork.svg"
-          width={314}
-          height={390}
-          alt="pattern-fork"
-        />
-
-        <div className=" w-[600px] z-10 text-center">
-          <h1 className="text-preset-2 text-neutral-900">
-            Ready to cook smarter?
-          </h1>
-          <p className="text-preset-6 mt-[12px]">
-            Hit the button, pick a recipe, and get dinner on the table—fast.
-          </p>
-
-          <button className="button mt-[24px]">Browse recipes</button>
-        </div>
-        <Image
-          className="absolute -right-[60px]"
-          src="/images/pattern-knife.svg"
-          width={314}
-          height={390}
-          alt="pattern-knife"
-        />
-      </section>
+      <CookSmarterSection />
     </>
   );
 }

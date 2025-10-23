@@ -26,6 +26,7 @@ export default function DropDownMenu({ DropMenuProperty }) {
           {DropMenuProperty.title}
 
           <Image
+            priority
             className={`${
               isOpen && "rotate-[180deg]"
             } transition-all duration-300`}

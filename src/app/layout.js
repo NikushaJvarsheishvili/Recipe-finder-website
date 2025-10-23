@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
       <link rel="icon" href="/menu.png" sizes="any" />
 
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-neutral-100`}
+        className={` ${geistSans.variable} ${geistMono.variable} antialiased bg-neutral-100`}
       >
         <Header />
 

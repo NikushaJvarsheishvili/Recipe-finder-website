@@ -5,17 +5,38 @@ import RecipeEssentials from "./RecipeEssentials";
 import Link from "next/link";
 import recipesData from "@/app/data.json";
 import { useParams } from "next/navigation";
+import { useState, useEffect } from "react";
 
 export default function Card({ isFull }) {
   const { id } = useParams();
-  let data = recipesData;
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    if (!isFull) {
+      function generateThreeUniqueNumber() {
+        const randomNumberArr = [];
+        while (randomNumberArr.length < 3) {
+          const randomNumber =
+            Math.floor(Math.random() * recipesData.length) + 1;
+          if (
+            !randomNumberArr.includes(randomNumber) &&
+            randomNumber !== Number(id)
+          ) {
+            randomNumberArr.push(randomNumber);
+          }
+        }
+        return randomNumberArr;
+      }
 
-  if (!isFull) {
-    const remainingRecipes = recipesData.filter(
-      (item) => item.id !== Number(id)
-    );
-    data = remainingRecipes.slice(0, 3);
-  }
+      const randomIds = generateThreeUniqueNumber();
+      const filtered = recipesData.filter((item) =>
+        randomIds.includes(item.id)
+      );
+      setData(filtered);
+    } else {
+      setData(recipesData);
+    }
+  }, [isFull, id]);
+  console.log(data);
 
   return (
     <article
@@ -32,6 +53,7 @@ export default function Card({ isFull }) {
           >
             <div className="flex flex-col gap-[16px] pb-[16px]">
               <Image
+                priority
                 className="mx-auto rounded-radius-10 h-[300px] w-full object-cover"
                 src={item.image.small.slice(8)}
                 width={360}

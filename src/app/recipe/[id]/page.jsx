@@ -19,7 +19,6 @@ export default function RecipeInfoPage() {
 
   const findRecipeById = recipeData.find((item) => item.id === Number(id));
 
-  console.log(findRecipeById);
   return (
     <div className="flex gap-[64px] items-center pb-[96px] flex-col">
       <section className="max-w-[1192px] flex flex-col gap-[16px] items-start">
@@ -34,6 +33,7 @@ export default function RecipeInfoPage() {
         <div className="flex gap-[40px] md:flex-row flex-col">
           <article>
             <Image
+              priority
               className="rounded-radius-16"
               src={findRecipeById.image.large.slice(8)}
               width={580}
@@ -58,6 +58,7 @@ export default function RecipeInfoPage() {
                     <ul key={index} className="flex flex-col gap-[8px]">
                       <li className="text-preset-6 text-neutral-900 flex gap-[8px]">
                         <Image
+                          priority
                           src="/images/icon-bullet-point.svg"
                           width={24}
                           height={24}
@@ -78,6 +79,7 @@ export default function RecipeInfoPage() {
                     <ul key={index} className="flex flex-col gap-[8px]">
                       <li className="text-preset-6 text-neutral-900 flex gap-[8px]">
                         <Image
+                          priority
                           src="/images/icon-bullet-point.svg"
                           width={24}
                           height={24}

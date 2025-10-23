@@ -9,6 +9,7 @@ export default function RecipeEssentials({ details, isWide }) {
     >
       <p className="flex gap-[6px]">
         <Image
+          priority
           src="/images/icon-servings.svg"
           width={20}
           height={20}
@@ -18,6 +19,7 @@ export default function RecipeEssentials({ details, isWide }) {
       </p>
       <p className="flex gap-[6px]">
         <Image
+          priority
           src="/images/icon-prep-time.svg"
           width={20}
           height={20}
@@ -27,6 +29,7 @@ export default function RecipeEssentials({ details, isWide }) {
       </p>
       <p className="flex gap-[6px]">
         <Image
+          priority
           src="/images/icon-cook-time.svg"
           width={20}
           height={20}

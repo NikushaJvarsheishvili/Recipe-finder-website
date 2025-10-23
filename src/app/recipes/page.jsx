@@ -39,6 +39,7 @@ export default function Recipes() {
             <form>
               <div className="relative flex items-center mr-[65px] w-full">
                 <Image
+                  priority
                   className="absolute ml-[10px]"
                   src={"/images/icon-search.svg"}
                   width={20}
