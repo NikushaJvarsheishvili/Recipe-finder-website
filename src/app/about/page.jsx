@@ -4,11 +4,10 @@ import React from "react";
 import CookSmarterSection from "../_components/CookSmarterSection";
 
 export default function About() {
-  console.log(aboutSectionsData);
   return (
     <>
-      <section className="flex gap-[64px] justify-center py-[96px]">
-        <div className="max-w-[510px] flex flex-col gap-[24px] items-start justify-center">
+      <section className="flex md:flex-row flex-col gap-[64px] justify-center md:py-[96px]">
+        <div className="md:max-w-[510px] flex flex-col gap-[24px] items-start justify-center">
           <h3 className="text-preset-5 bg-orange-500 text-neutral-900 rounded-radius-6 px-[6px] py-[2px]">
             Our mission
           </h3>
@@ -30,7 +29,7 @@ export default function About() {
         <div>
           <Image
             priority
-            className="rounded-radius-10"
+            className="rounded-radius-10 max-md:w-full"
             src="/images/image-about-our-mission-large.webp"
             width={618}
             height={600}
@@ -44,10 +43,10 @@ export default function About() {
           <React.Fragment key={i}>
             <hr />{" "}
             <section
-              className="flex justify-center gap-[154px] py-[96px]"
+              className="flex md:flex-row flex-col justify-center gap-[40px] md:gap-[154px] py-[96px]"
               key={i}
             >
-              <div className="max-w-[340px]">
+              <div className="md:max-w-[340px]">
                 <h2 className="text-preset-2 text-neutral-900">
                   {section.title}
                 </h2>
@@ -76,9 +75,11 @@ export default function About() {
           </React.Fragment>
         );
       })}
-      <section className="flex gap-[84px] justify-center py-[96px]">
-        <div className="max-w-[367px]">
-          <h1 className="text-preset-2 text-neutral-900">Beyond the plate</h1>
+      <section className="flex md:flex-row flex-col gap-[84px] justify-center md:py-[96px] pt-[96px]">
+        <div className="md:max-w-[367px]">
+          <h1 className="text-preset-2 text-neutral-900 max-md:pb-[20px]">
+            Beyond the plate
+          </h1>
           <p className="text-preset-6">
             We believe food is a catalyst for community and well-being. By
             sharing approachable recipes, we hope to:

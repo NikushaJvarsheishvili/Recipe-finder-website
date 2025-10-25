@@ -24,9 +24,9 @@ export default function Home() {
 
   return (
     <>
-      <section className="flex-col-center items-center gap-40 mt-80 text-center">
+      <section className="flex-col-center items-start md:items-center gap-40  md:text-center">
         <div>
-          <h1 className="text-preset-1 text-neutral-900">
+          <h1 className="text-preset-1 max-md:text-[64px] text-neutral-900">
             <span
               className="relative border-none
 
@@ -44,7 +44,7 @@ export default function Home() {
             </span>{" "}
             meals, zero fuss
           </h1>
-          <p className="text-preset-6 max-w-580 m-auto">
+          <p className="text-preset-6 max-w-580 md:m-auto">
             Discover eight quick, whole-food recipes that you can cook
             tonight—no processed junk, no guesswork.
           </p>
@@ -55,42 +55,32 @@ export default function Home() {
       </section>
       <section className="relative">
         <Image
+          className="absolute bottom-[10px] w-full z-[-1]"
           priority
           src="/images/pattern-squiggle-1.svg"
           width={0}
           height={0}
           alt="pattern-squiggle"
-          style={{
-            width: "100%",
-            position: "absolute",
-            zIndex: "-1",
-            bottom: "10px",
-          }}
         />{" "}
         <Image
+          className="mt-[80px]  rounded-radius-20 m-auto border-[10px] border-white"
           priority
           src="/images/image-home-hero-large.webp"
           alt="pattern-squiggle"
           width={1192}
           height={1000}
-          style={{
-            border: "solid white 10px",
-            margin: "auto",
-            borderRadius: "20px",
-            marginTop: "80px",
-          }}
         />
       </section>
       <section className="mt-[90px]">
-        <h1 className="text-preset-2 text-neutral-900 text-center">
+        <h1 className="text-preset-2 text-neutral-900 md:text-center">
           What you’ll get
         </h1>
-        <div className="flex items-center md:justify-center flex-col md:flex-row gap-[32px]">
+        <div className="flex md:items-center md:justify-center flex-col md:flex-row md:gap-[32px]">
           {benefits.map((item, index) => {
             return (
               <div
                 key={index}
-                className="mt-[48px] max-w-[376px] flex flex-col gap-[24px]"
+                className="mt-[48px] md:max-w-[376px] flex flex-col gap-[24px]"
               >
                 <Image
                   priority
@@ -112,12 +102,12 @@ export default function Home() {
           })}
         </div>
       </section>
-      <section className=" flex flex-col md:flex-row items-center  mt-[192px] justify-center gap-[76px]">
+      <section className=" flex flex-col md:flex-row md:items-center mt-[92px] md:mt-[192px]  justify-center gap-[76px]">
         <div className="  flex flex-col justify-center gap-[20px] ">
           <h1 className="text-preset-2 text-neutral-900">
             Built for real life
           </h1>
-          <p className="max-w-[480px] text-preset-6">
+          <p className="md:max-w-[480px] text-preset-6">
             Cooking shouldn’t be complicated. These recipes come in under{" "}
             <span
               className="font-bold relative
@@ -134,15 +124,16 @@ export default function Home() {
             </span>{" "}
             of active time, fit busy schedules, and taste good enough to repeat.
           </p>
-          <p className="max-w-[480px] text-preset-6">
+          <p className="md:max-w-[480px] text-preset-6">
             Whether you’re new to the kitchen or just need fresh ideas, we’ve
             got you covered.
           </p>
         </div>
+
         <div>
           <Image
             priority
-            className="rounded-radius-16"
+            className="rounded-radius-16 max-md:w-full"
             src="/images/image-home-real-life-large.webp"
             width={635}
             height={450}

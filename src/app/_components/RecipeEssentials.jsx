@@ -4,10 +4,10 @@ export default function RecipeEssentials({ details, isWide }) {
   return (
     <div
       className={` grid ${
-        isWide ? "" : "sm:grid-cols-2"
+        isWide ? "max-sm:grid-cols-2" : "max-sm:grid-cols-2 md:grid-cols-2"
       }  gap-x-[16px] gap-y-[8px]  text-preset-9 text-neutral-900 font-medium grid-cols-3 max-w-[450px]`}
     >
-      <p className="flex gap-[6px]">
+      <p className="flex gap-[6px] items-center">
         <Image
           priority
           src="/images/icon-servings.svg"
@@ -17,7 +17,7 @@ export default function RecipeEssentials({ details, isWide }) {
         />
         Serving: {details.servings}
       </p>
-      <p className="flex gap-[6px]">
+      <p className="flex gap-[6px] items-center">
         <Image
           priority
           src="/images/icon-prep-time.svg"
@@ -27,7 +27,7 @@ export default function RecipeEssentials({ details, isWide }) {
         />
         Prep: {details.prepMinutes} {details.prepMinutes === 0 ? "min" : "mins"}
       </p>
-      <p className="flex gap-[6px]">
+      <p className="flex gap-[6px] items-center">
         <Image
           priority
           src="/images/icon-cook-time.svg"

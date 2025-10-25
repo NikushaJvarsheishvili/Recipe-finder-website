@@ -6,50 +6,50 @@ import Link from "next/link";
 import recipesData from "@/app/data.json";
 import { useParams } from "next/navigation";
 import { useState, useEffect } from "react";
+import { generateThreeUniqueNumber } from "@/lib/generateThreeUniqueNumber";
 
-export default function Card({ isFull }) {
+export default function Card({ isFull, filter }) {
   const { id } = useParams();
   const [data, setData] = useState([]);
   useEffect(() => {
     if (!isFull) {
-      function generateThreeUniqueNumber() {
-        const randomNumberArr = [];
-        while (randomNumberArr.length < 3) {
-          const randomNumber =
-            Math.floor(Math.random() * recipesData.length) + 1;
-          if (
-            !randomNumberArr.includes(randomNumber) &&
-            randomNumber !== Number(id)
-          ) {
-            randomNumberArr.push(randomNumber);
-          }
-        }
-        return randomNumberArr;
-      }
-
-      const randomIds = generateThreeUniqueNumber();
+      const randomIds = generateThreeUniqueNumber(recipesData, id);
       const filtered = recipesData.filter((item) =>
         randomIds.includes(item.id)
       );
       setData(filtered);
     } else {
-      setData(recipesData);
+      const filteredRecipe = recipesData.filter((item, index) => {
+        const matchesPrep =
+          filter.maxPrepTime === "" ||
+          item.prepMinutes === Number(filter.maxPrepTime);
+        const matchesCook =
+          filter.maxCookTime === "" ||
+          item.cookMinutes === Number(filter.maxCookTime);
+
+        const filterBySearch =
+          !filter.searchQuery ||
+          item.title.toLowerCase().includes(filter.searchQuery.toLowerCase());
+
+        return matchesPrep && matchesCook && filterBySearch;
+      });
+      setData(filteredRecipe);
     }
-  }, [isFull, id]);
-  console.log(data);
+  }, [isFull, id, filter]);
 
   return (
     <article
       className="mt-[24px] max-w-[1192px] m-auto grid
             gap-[32px]
-            sm:grid-cols-2
+            sm:grid-cols-1
+            md:grid-cols-2
             lg:grid-cols-3"
     >
       {data.map((item, index) => {
         return (
           <div
             key={index}
-            className="card flex flex-col justify-between p-[8px] mx-auto rounded-radius-10"
+            className="card flex flex-col justify-between p-[8px] mx-auto rounded-radius-10 sm:w-full"
           >
             <div className="flex flex-col gap-[16px] pb-[16px]">
               <Image

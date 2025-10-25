@@ -1,18 +1,16 @@
+"use client";
+
 import Image from "next/image";
 import DropDownMenu from "../_components/DropDownMenu";
 import Card from "../_components/Card";
+import { useState } from "react";
 
 export default function Recipes() {
-  const DropMenuProperty = {
-    prep: {
-      title: "Max Prep Time",
-      minutes: [0, 5, 10],
-    },
-    cook: {
-      title: "Max Cook Time",
-      minutes: [0, 5, 10, 15, 20],
-    },
-  };
+  const [filter, setFilter] = useState({
+    maxPrepTime: "",
+    maxCookTime: "",
+    searchQuery: "",
+  });
 
   return (
     <>
@@ -30,12 +28,11 @@ export default function Recipes() {
         </article>
       </section>
       <section className="py-[96px]">
-        <article className="flex justify-between max-w-[1192px] m-auto">
-          <div className="flex gap-[16px]">
-            <DropDownMenu DropMenuProperty={DropMenuProperty.prep} />
-            <DropDownMenu DropMenuProperty={DropMenuProperty.cook} />
+        <article className="flex max-md:flex-col justify-between max-w-[1192px] m-auto">
+          <div className="flex max-sm:flex-col gap-[16px] max-sm:justify-between">
+            <DropDownMenu filter={filter} setFilter={setFilter} />
           </div>
-          <div>
+          <div className="max-md:mt-[10px]">
             <form>
               <div className="relative flex items-center mr-[65px] w-full">
                 <Image
@@ -47,6 +44,10 @@ export default function Recipes() {
                   alt="search-icon"
                 />
                 <input
+                  value={filter.searchQuery}
+                  onChange={(e) =>
+                    setFilter({ ...filter, searchQuery: e.target.value })
+                  }
                   type="text"
                   placeholder="Search by name or ingredient…"
                   className="pl-[46px] pr-[16px] py-2 border border-gray-300 rounded-radius-10 w-full "
@@ -55,7 +56,7 @@ export default function Recipes() {
             </form>
           </div>
         </article>
-        <Card isFull={true} />
+        <Card isFull={true} filter={filter} />
       </section>
     </>
   );

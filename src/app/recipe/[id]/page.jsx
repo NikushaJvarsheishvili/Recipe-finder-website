@@ -20,7 +20,7 @@ export default function RecipeInfoPage() {
   const findRecipeById = recipeData.find((item) => item.id === Number(id));
 
   return (
-    <div className="flex gap-[64px] items-center pb-[96px] flex-col">
+    <div className="flex gap-[40px] md:gap-[64px] items-center pb-[96px] flex-col">
       <section className="max-w-[1192px] flex flex-col gap-[16px] items-start">
         <Link className="text-neutral-900 text-preset-9" href={"/recipes"}>
           Back

@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
       >
         <Header />
 
-        <main className="mt-[200px]">
+        <main className="md:mt-[200px] mt-[150px] max-md:px-[32px]">
           <AnimatedWrapper>{children}</AnimatedWrapper>
         </main>
 

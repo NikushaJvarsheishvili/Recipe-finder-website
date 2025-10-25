@@ -91,9 +91,15 @@
 .flex-col-center {
   @apply flex flex-col;
 }
+.center {
+  @apply left-[50%]  translate-x-[-50%] top-[20px];
+}
 
 .text-preset-1 {
   @apply text-71 leading-110 -tracking--2 font-nunito-extrabold;
+}
+.text-preset-1-tablet {
+  @apply text-[64px] leading-110 -tracking--2 font-nunito-extrabold;
 }
 
 .text-preset-2 {
@@ -121,9 +127,9 @@
 }
 
 .button {
-  @apply border-none px-36 py-16 bg-neutral-900 text-white font-bold rounded-radius-10 font-nunito-bold;
+  @apply border-none  px-36 py-16 bg-neutral-900 text-white font-bold rounded-radius-10 font-nunito-bold;
 }
-
+/* px-36 py-16 */
 @layer components {
   .nav-item-active {
     @apply relative;
